@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @post = Post.new
-
+    @posts = Post.all
   end
 
   def show
@@ -16,6 +16,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:text).permit(:text, :id)
+    params.require(:post).permit(:text, :id)
   end
 end

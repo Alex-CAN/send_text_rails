@@ -1,10 +1,20 @@
-<div class="container">
   <div class="row">
-    <div class="col-md-6">
-      left
+
+    <div class="col span-1-of-2">
+    <%= form_for @post do |f| %>
+      <p>
+        Text: <%=f.text_field :text %>
+      </p>
+      <p>
+        <%=f.submit 'Send' %>
+      </p>
+    <%end%>
     </div>
-    <div class="col-md-6">
-      right
+
+    <div class="col span-1-of-2">
+      <% @posts.each do |post|%>
+      <p><%=post.text%> <%=post.created_at%></p>
+      <%end%>
     </div>
-  </div>
+
 </div>
