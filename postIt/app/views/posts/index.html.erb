@@ -1,20 +1,16 @@
   <div class="row">
 
     <div class="col span-1-of-2">
-    <%= form_for @post do |f| %>
-      <p>
-        Text: <%=f.text_field :text %>
-      </p>
-      <p>
-        <%=f.submit 'Send' %>
-      </p>
-    <%end%>
+      <%= render 'form'%>
     </div>
 
-    <div class="col span-1-of-2">
-      <% @posts.each do |post|%>
-      <p><%=post.text%> <%=post.created_at%></p>
-      <%end%>
+    <div class="col span-1-of-2 requests">
+      <h1><%=@posts.count%> requests</h1>
+        <div class="request-list">
+          <% @posts.each do |post|%>
+          <p><%=post.text%> <%=post.created_at%></p>
+          <%end%>
+        </div>
     </div>
 
 </div>
