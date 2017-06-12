@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def index
     @post = Post.new
     @posts = Post.all
@@ -11,14 +12,14 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
-    # if @post.save
-    #   respond_to do |f|
-    #     f.html {redirect_to root}
-    #     f.js
-    #   end
-    # else
-    #   redirect_to root
-    # end
+    if @post.save
+      respond_to do |f|
+        f.html {redirect_to root}
+        f.js
+      end
+    else
+      redirect_to root
+    end
   end
 
   private

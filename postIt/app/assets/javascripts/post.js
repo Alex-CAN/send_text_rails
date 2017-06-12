@@ -1,8 +1,9 @@
 $( document ).ready(function() {
 
-    $('.send').on('submit', function(){
+    $('.send').on('submit', function(event){
       event.preventDefault();
-      $('.request-list').append('<%= j render()%>')
-      });
+      console.log("here");
+
+    
     })
 });

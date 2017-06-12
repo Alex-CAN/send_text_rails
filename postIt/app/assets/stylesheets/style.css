@@ -1,6 +1,7 @@
-.requests {
+.requests, .send {
   text-align: center;
 }
 .request-list {
   height: 300px;
+  overflow: scroll;
 }
